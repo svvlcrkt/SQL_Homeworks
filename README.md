@@ -69,5 +69,5 @@ SORU 4 - film tablosunda bulunan tüm sütunlardaki verilerden title 'C' karakte
 SELECT * FROM film 
 WHERE length > 90 AND rental_rate = 2.99 AND title ~~ 'C%';
 ```
--- ~~ is LIKE 
+**~~ --> LIKE**
 
