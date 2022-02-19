@@ -93,7 +93,7 @@ SELECT COUNT(country) AS country FROM country
 WHERE country LIKE '_____';
 ```
 SORU 5 - City tablosundaki şehir isimlerinin kaç tanesi R veya r karakteri ile biter?
-```
+```sql
 SELECT COUNT(city) AS city FROM city
 WHERE city ILIKE '%r';
 ```
