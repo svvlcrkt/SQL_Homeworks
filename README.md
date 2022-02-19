@@ -1,4 +1,4 @@
-# SQL_Homeworks
+# PostgreSQL_Homeworks
 
 ## HW-1
 
