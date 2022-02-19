@@ -1,6 +1,6 @@
-# PostgreSQL_Homeworks
+# PostgreSQL_Ödevler
 
-## 📝 HW-1
+## 📝 ÖDEV-1
 
 ### Aşağıdaki sorgu senaryolarını **dvdrental** örnek veri tabanı üzerinden gerçekleştiriniz.
 
