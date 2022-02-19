@@ -49,6 +49,8 @@ WHERE rental_rate IN (0.99, 2.99, 4.99) AND replacement_cost IN (12.99, 15.99, 2
 
 ## 📝 ÖDEV-3 
 
+** ~~ --> LIKE **
+
 SORU 1 - country tablosunda bulunan country sütunundaki ülke isimlerinden 'A' karakteri ile başlayıp 'a' karakteri ile sonlananları sıralayınız.
 ```sql
 SELECT country FROM country 
@@ -69,5 +71,5 @@ SORU 4 - film tablosunda bulunan tüm sütunlardaki verilerden title 'C' karakte
 SELECT * FROM film 
 WHERE length > 90 AND rental_rate = 2.99 AND title ~~ 'C%';
 ```
-**~~ --> LIKE**
+
 
