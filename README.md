@@ -1,6 +1,8 @@
 # SQL_Homeworks
 
-## Aşağıdaki sorgu senaryolarını **dvdrental** örnek veri tabanı üzerinden gerçekleştiriniz.
+## HW-1
+
+### Aşağıdaki sorgu senaryolarını **dvdrental** örnek veri tabanı üzerinden gerçekleştiriniz.
 
 SORU 1 - Film tablosunda bulunan title ve description sütunlarındaki verileri sıralayınız.
 ```sql
