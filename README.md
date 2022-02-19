@@ -49,7 +49,7 @@ WHERE rental_rate IN (0.99, 2.99, 4.99) AND replacement_cost IN (12.99, 15.99, 2
 
 ## 📝 ÖDEV-3 
 
-### '~~' --> LIKE
+### ~~ --> LIKE
 
 SORU 1 - country tablosunda bulunan country sütunundaki ülke isimlerinden 'A' karakteri ile başlayıp 'a' karakteri ile sonlananları sıralayınız.
 ```sql
