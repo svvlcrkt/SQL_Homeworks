@@ -123,3 +123,24 @@ ORDER BY last_name DESC
 LIMIT 4;
 ```
 
+## 📝 ÖDEV-6
+
+SORU 1 - Film tablosunda bulunan rental_rate sütunundaki değerlerin ortalaması nedir?
+```sql
+SELECT ROUND(AVG(rental_rate),4) AS average FROM film;
+```
+SORU 2 - Film tablosunda bulunan filmlerden kaç tanesi 'C' karakteri ile başlar?
+```sql
+SELECT COUNT(*) AS count FROM film
+WHERE title ~~ 'C%';
+```
+SORU 3 - Film tablosunda bulunan filmlerden rental_rate değeri 0.99 a eşit olan en uzun (length) film kaç dakikadır?
+```sql
+SELECT MAX(length) AS max FROM film
+WHERE rental_rate = 0.99;
+```
+SORU 4 - Film tablosunda bulunan filmlerin uzunluğu 150 dakikadan büyük olanlarına ait kaç farklı replacement_cost değeri vardır?
+```sql
+SELECT COUNT(DISTINCT replacement_cost) FROM film
+WHERE length > 150;
+```
