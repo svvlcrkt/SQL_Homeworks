@@ -283,6 +283,5 @@ WHERE birthday = '2019-09-24';
 --5
 DELETE FROM employee
 WHERE id = 11;
-SELECT * FROM employee;
 ```
 
