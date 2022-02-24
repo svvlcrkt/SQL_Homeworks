@@ -285,3 +285,20 @@ DELETE FROM employee
 WHERE id = 11;
 ```
 
+## 📝 ÖDEV-9
+
+SORU 1 - City tablosu ile country tablosunda bulunan şehir (city) ve ülke (country) isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.
+```sql
+SELECT country, city FROM city 
+INNER JOIN country ON city.country_id = country.country_id;
+```
+SORU 2 - Customer tablosu ile payment tablosunda bulunan payment_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.
+```sql
+SELECT payment_id, first_name, last_name FROM customer
+INNER JOIN payment ON customer.customer_id = payment.customer_id;
+```
+SORU 3 - Customer tablosu ile rental tablosunda bulunan rental_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.
+```sql
+SELECT rental_id, first_name, last_name FROM customer
+INNER JOIN rental ON customer.customer_id = rental.customer_id;
+```
