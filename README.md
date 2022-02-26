@@ -387,3 +387,44 @@ WHERE amount =
 	SELECT MAX(amount) FROM payment
 );
 ```
+
+## 📝 GENEL TEKRAR ÖRNEKLERİ
+
+SORU 1 - İsminde en az 4 tane e veya E bulunan kaç tane film vardır?
+```sql
+SELECT COUNT(*) FROM film
+WHERE title ILIKE '%e%e%e%e%';
+```
+SORU 2 - Kategori isimlerini ve kategori başına düşen film sayısını yazınız.
+```sql
+SELECT name, COUNT(*) FROM category
+JOIN film_category ON category.category_id = film_category.category_id
+JOIN film ON film.film_id = film_category.film_id
+GROUP BY name;
+```
+SORU 3 - En çok film bulunan rating kategorisi hangisidir?
+```sql
+SELECT rating, COUNT(film_id)
+FROM film
+GROUP BY rating
+ORDER BY COUNT(film_id) DESC
+LIMIT 1;
+```
+SORU 4 - Film tablosunda bulunan 'K' karakteri ile başlayan en uzun ve replacement_cost en az olan 3 filmi sıralayınız.
+```sql
+SELECT * FROM film
+WHERE title LIKE 'K%'
+ORDER BY length DESC, replacement_cost ASC
+LIMIT 3;
+```
+SORU 5 - En çok alışveriş yapan müşterinin adı nedir?
+```sql
+SELECT first_name, last_name, SUM(amount) FROM customer
+JOIN payment
+ON customer.customer_id = payment.customer_id
+GROUP BY customer.customer_id, first_name, last_name
+ORDER BY SUM(amount) DESC
+LIMIT 1;
+```
+
+
