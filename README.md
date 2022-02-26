@@ -379,13 +379,12 @@ WHERE replacement_cost =
 ```
 SORU 4 - Payment tablosunda en fazla sayıda alışveriş yapan müşterileri(customer) sıralayınız.
 ```sql
-SELECT first_name, last_name, amount FROM payment
-JOIN customer
-ON payment.customer_id = customer.customer_id
-WHERE amount = 
-(
-	SELECT MAX(amount) FROM payment
-);
+SELECT first_name, last_name, SUM(amount) FROM customer
+JOIN payment
+ON customer.customer_id = payment.customer_id
+GROUP BY customer.customer_id, first_name, last_name
+ORDER BY SUM(amount) DESC
+LIMIT 1;
 ```
 
 ## 📝 GENEL TEKRAR ÖRNEKLERİ
