@@ -344,3 +344,46 @@ SORU 4 - İlk 3 sorguyu tekrar eden veriler için de yapalım.
 --Except için:
 (SELECT first_name FROM actor) EXCEPT ALL (SELECT first_name FROM customer);
 ```
+
+## 📝 ÖDEV-12
+
+SORU 1 - Film tablosunda film uzunluğu length sütununda gösterilmektedir. Uzunluğu ortalama film uzunluğundan fazla kaç tane film vardır?
+```sql
+SELECT COUNT(*) FROM film
+WHERE length >
+(
+	SELECT AVG(length) FROM film
+);
+```
+SORU 2 - Film tablosunda en yüksek rental_rate değerine sahip kaç tane film vardır?
+```sql
+SELECT COUNT(*) FROM film
+WHERE rental_rate =
+(
+	SELECT MAX(rental_rate) FROM film
+);
+```
+SORU 3 - Film tablosunda en düşük rental_rate ve en düşün replacement_cost değerlerine sahip filmleri sıralayınız.
+```sql
+(SELECT * FROM film
+WHERE rental_rate =
+(
+	SELECT MIN(rental_rate) FROM film
+))
+INTERSECT
+(SELECT * FROM film
+WHERE replacement_cost =
+(
+	SELECT MIN(replacement_cost) FROM film
+));
+```
+SORU 4 - Payment tablosunda en fazla sayıda alışveriş yapan müşterileri(customer) sıralayınız.
+```sql
+SELECT first_name, last_name, amount FROM payment
+JOIN customer
+ON payment.customer_id = customer.customer_id
+WHERE amount = 
+(
+	SELECT MAX(amount) FROM payment
+);
+```
